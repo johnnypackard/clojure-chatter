@@ -15,3 +15,15 @@
 
 (def app
   (wrap-defaults app-routes site-defaults))
+
+(defn generate-message-view
+  "This generates the HTML for displaying messages"
+  []
+  (page/html5
+    [:head
+      [:title "chatter"]]
+    [:body
+      :h1 "Our Chat App"]))
+  (defroues app-routes
+    (GET "/" [] (grenerate-message-view))
+    (route/not-found "Not Found"))
